@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>まだまだあるよ</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+        }
 
+        /* 画像と文字を包むコンテナ（土台） */
+        .container {
+            position: relative; /* 子要素の基準になる */
+            width: 100%;
+            height: 100vh; /* 画面いっぱいの高さ */
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* 背景画像の設定 */
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 画面一杯に広げる（はみ出しはカット） */
+            opacity: 0.7; /* 文字を見やすくするために少し暗くする */
+        }
+
+        /* 重ねる文字の設定 */
+        .overlay-text {
+            position: absolute; /* 親要素を基準に自由に配置 */
+            top: 50%;           /* 上から50%の位置 */
+            left: 50%;          /* 左から50%の位置 */
+            transform: translate(-50%, -50%); /* 真ん中に持ってくるための調整 */
+            
+            color: white;       /* 文字色 */
+            text-align: center;
+            width: 90%;         /* スマホで端まで行かないように */
+        }
+
+        .overlay-text h1 {
+            font-size: 3rem;    /* 文字の大きさ */
+            margin: 0;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* 文字に影をつけて読みやすく */
+        }
+
+        .overlay-text p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="B Web.png" alt="地図" class="bg-image">
+
+        <div class="overlay-text">
+            <h1>よく見つけた</h1>
+            <p>R/Sに向かえ</p>
+        </div>
+    </div>
+
+</body>
+</html>

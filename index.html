@@ -5,63 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>まだまだあるよ</title>
     <style>
-        body, html {
+        /* 全体の設定 */
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+            color: #333;
             margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: "Helvetica Neue", Arial, sans-serif;
+            padding: 20px; /* 画面端に文字がくっつかないように余白を作る */
+            display: flex;
+            flex-direction: column; /* 要素を縦に並べる */
+            align-items: center;    /* 中央寄せにする */
+            background-color: #f9f9f9;
         }
 
-        /* 画像と文字を包むコンテナ（土台） */
-        .container {
-            position: relative; /* 子要素の基準になる */
+        /* 文章が入るエリアの設定 */
+        .content {
+            max-width: 800px; /* 読みやすい幅に制限する */
             width: 100%;
-            height: 100vh; /* 画面いっぱいの高さ */
-            overflow: hidden;
-            background-color: #000;
+            text-align: center; /* 文字を中央に */
+            margin-bottom: 30px; /* 画像との間に隙間を作る */
         }
 
-        /* 背景画像の設定 */
-        .bg-image {
+        h1 {
+            font-size: 2rem;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        /* 画像の設定 */
+        .photo-container {
+            max-width: 800px; /* 画像が大きすぎないように制限 */
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* 画面一杯に広げる（はみ出しはカット） */
-            opacity: 0.7; /* 文字を見やすくするために少し暗くする */
         }
 
-        /* 重ねる文字の設定 */
-        .overlay-text {
-            position: absolute; /* 親要素を基準に自由に配置 */
-            top: 50%;           /* 上から50%の位置 */
-            left: 50%;          /* 左から50%の位置 */
-            transform: translate(-50%, -50%); /* 真ん中に持ってくるための調整 */
-            
-            color: white;       /* 文字色 */
-            text-align: center;
-            width: 90%;         /* スマホで端まで行かないように */
-        }
-
-        .overlay-text h1 {
-            font-size: 3rem;    /* 文字の大きさ */
-            margin: 0;
-            text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* 文字に影をつけて読みやすく */
-        }
-
-        .overlay-text p {
-            font-size: 1.2rem;
-            margin-top: 10px;
+        img {
+            width: 100%;      /* 横幅いっぱいに広げる */
+            height: auto;     /* 高さは自動調整（比率を維持） */
+            border-radius: 8px; /* 角を少し丸くすると今風になります */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* 軽い影をつけて浮かせる */
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="B Web.png" alt="地図" class="bg-image">
+    <div class="content">
+        <h1>よく見つけた</h1>
+        <p>R/Sへ向かえ</p>
+    </div>
 
-        <div class="overlay-text">
-            <h1>よく見つけた</h1>
-            <p>R/Sに向かえ</p>
-        </div>
+    <div class="photo-container">
+        <img src="B Web.png" alt="地図">
     </div>
 
 </body>
